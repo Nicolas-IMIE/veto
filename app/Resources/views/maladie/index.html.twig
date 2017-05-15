@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Maladies list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Maid</th>
+                <th>Maname</th>
+                <th>Matraitement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for maladie in maladies %}
+            <tr>
+                <td><a href="{{ path('maladie_show', { 'id': maladie.id }) }}">{{ maladie.id }}</a></td>
+                <td>{{ maladie.maId }}</td>
+                <td>{{ maladie.maName }}</td>
+                <td>{% if maladie.maTraitement %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('maladie_show', { 'id': maladie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('maladie_edit', { 'id': maladie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('maladie_new') }}">Create a new maladie</a>
+        </li>
+    </ul>
+{% endblock %}
