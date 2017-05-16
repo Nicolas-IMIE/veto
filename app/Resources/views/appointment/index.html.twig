@@ -19,7 +19,7 @@
                 <td><a href="{{ path('appointment_show', { 'id': appointment.id }) }}">{{ appointment.id }}</a></td>
                 <td>{{ appointment.appId }}</td>
                 <td>{{ appointment.appClient }}</td>
-                <td>{{ appointment.appDate }}</td>
+                <td>{% if appointment.appDate %}{{ appointment.appDate|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>

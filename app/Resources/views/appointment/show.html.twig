@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Appdate</th>
-                <td>{{ appointment.appDate }}</td>
+                <td>{% if appointment.appDate %}{{ appointment.appDate|date('Y-m-d') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>
