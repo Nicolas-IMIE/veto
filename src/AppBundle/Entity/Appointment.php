@@ -24,7 +24,7 @@ class Appointment
     /**
      * @var int
      *
-     * @ORM\Column(name="app_id", type="integer", unique=true)
+     * @ORM\Column(name="app_id", type="integer")
      */
     private $appId;
 
@@ -38,7 +38,7 @@ class Appointment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="app_date", type="datetimetz")
+     * @ORM\Column(name="app_date", type="datetime")
      */
     private $appDate;
 

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block layout %}
+    <h1>Rendezvous creation</h1>
+
+    {{ form_start(form) }}
+    {#{{ form_row(form.reference, { 'attr': {'disabled': 'disabled'} }) }}#}
+    {#{{ form_row(form.date) }}#}
+    {#{{ form_row(form.client) }}#}
+    {#{{ form_row(form.docteur) }}#}
+    {#{{ form_row(form.maladie) }}#}
+    {#{{ form_widget(form._token) }}#}
+
+    {{ form_rest(form) }}
+
+    <input type="submit" value="Create"/>
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('rendezvous_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

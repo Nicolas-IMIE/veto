@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block layout %}
+    <h1>Docteurs list</h1>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Espèces prise en charge</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for docteur in docteurs %}
+                <tr>
+                    <td><a href="{{ path('docteur_show', { 'id': docteur.id }) }}">{{ docteur.id }}</a></td>
+                    <td>{{ docteur.nom }}</td>
+                    <td>{{ docteur.prenom }}</td>
+                    <td>
+                        <ul class="list-unstyled">
+                            {% for espece in docteur.especes %}
+                                <li>{{ espece }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <a role="button" class="btn btn-default" href="{{ path('docteur_show', { 'id': docteur.id }) }}">show</a>
+                            <a role="button" class="btn btn-default" href="{{ path('docteur_edit', { 'id': docteur.id }) }}">edit</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-success" href="{{ path('docteur_new') }}" role="button">Créer nouveau docteur</a>
+{% endblock %}

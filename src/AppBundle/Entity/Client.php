@@ -42,13 +42,6 @@ class Client
      */
     private $clEspece;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cd_name", type="string", length=255)
-     */
-    private $cdName;
-
 
     /**
      * Get id
@@ -127,28 +120,5 @@ class Client
     public function getClEspece()
     {
         return $this->clEspece;
-    }
-
-    /**
-     * Set cdName
-     *
-     * @param string $cdName
-     * @return Client
-     */
-    public function setCdName($cdName)
-    {
-        $this->cdName = $cdName;
-
-        return $this;
-    }
-
-    /**
-     * Get cdName
-     *
-     * @return string 
-     */
-    public function getCdName()
-    {
-        return $this->cdName;
     }
 }
