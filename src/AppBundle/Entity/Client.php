@@ -12,6 +12,29 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Client
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Maladie")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $maladie;
+
+    public function getMaladie()
+    {
+        return $this->maladie;
+    }
+
+    /**
+     * @param \AppBundle\Entity\Maladie $maladie
+     *
+     */
+    public function setMaladie(\AppBundle\Entity\Maladie $maladie)
+    {
+        $this->maladie = $maladie;
+
+        return $this;
+    }
+
     /**
      * @var int
      *
